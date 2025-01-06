@@ -6,6 +6,7 @@ import {
 } from "@fourkites/elemental-atoms";
 import { Builder } from "@builder.io/react";
 import { MapIcon, PlusIcon } from "@fourkites/elemental-atoms";
+import App from "./App";
 import Counter from "./components/Counter/Counter";
 import Heading from "./components/Heading";
 
@@ -174,6 +175,7 @@ Builder.registerComponent(ChevronDownIcon, {
     },
   ],
 });
+
 Builder.registerComponent(ClockIcon, {
   name: "ClockIcon",
   inputs: [
@@ -202,4 +204,7 @@ Builder.registerComponent(ClockIcon, {
       type: "string",
     },
   ],
+});
+Builder.registerComponent(App, {
+  name: "App",
 });

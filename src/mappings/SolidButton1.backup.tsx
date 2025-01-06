@@ -2,13 +2,6 @@ import { figmaMapping, type BaseFigmaProps } from "@builder.io/dev-tools/figma";
 import { Button } from "@fourkites/elemental-atoms";
 
 // ❖ Solid Button
-const GetMatchingComponent = () => {
-  <Button
-    size={figma.Size?.toLowerCase()}
-    theme={figma.Type?.toLowerCase()}
-    variant={figma.Variant?.toLowerCase()}
-  />
-}
 interface FigmaSolidButtonProps extends BaseFigmaProps {
   Type?: "Primary" | "Secondary" | "Tertiary" | "Destructive";
   Variant?:
@@ -30,7 +23,11 @@ figmaMapping({
   componentKey: "c9542eb16e3bed549aab38310ed6299153957d30",
   mapper(figma: FigmaSolidButtonProps) {
     return (
-      
+      <Button
+        size={figma.Size?.toLowerCase()}
+        theme={figma.Type?.toLowerCase()}
+        variant={figma.Variant?.toLowerCase()}
+      />
     );
   },
 });

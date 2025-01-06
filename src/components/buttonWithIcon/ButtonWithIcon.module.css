@@ -1,0 +1,21 @@
+.buttonContent {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+  margin: auto 0;
+}
+
+.buttonLabel {
+  align-self: stretch;
+  margin: auto 0;
+}
+
+.buttonIcon {
+  aspect-ratio: 1;
+  object-fit: contain;
+  object-position: center;
+  width: 16px;
+  align-self: stretch;
+  margin: auto 0;
+}

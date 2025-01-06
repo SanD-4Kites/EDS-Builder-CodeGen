@@ -1,14 +1,7 @@
 import { figmaMapping, type BaseFigmaProps } from "@builder.io/dev-tools/figma";
-import { Button } from "@fourkites/elemental-atoms";
+import { Button, PlusIcon } from "@fourkites/elemental-atoms";
 
-// ❖ Solid Button
-const GetMatchingComponent = () => {
-  <Button
-    size={figma.Size?.toLowerCase()}
-    theme={figma.Type?.toLowerCase()}
-    variant={figma.Variant?.toLowerCase()}
-  />
-}
+// ❖ Solid Button 
 interface FigmaSolidButtonProps extends BaseFigmaProps {
   Type?: "Primary" | "Secondary" | "Tertiary" | "Destructive";
   Variant?:
@@ -27,10 +20,25 @@ interface FigmaSolidButtonProps extends BaseFigmaProps {
 
 // Read more at https://www.builder.io/c/docs/mapping-functions
 figmaMapping({
-  componentKey: "c9542eb16e3bed549aab38310ed6299153957d30",
+  componentKey: "xxxxxx",
   mapper(figma: FigmaSolidButtonProps) {
+    if(figma.Variant?.toLowerCase() === 'text + icon'){
+      return (
+        <Button
+          size={figma.Size?.toLowerCase()}
+          theme={figma.Type?.toLowerCase()}
+          variant="icon-text"
+        >
+          {figma.$children[0]}
+        </Button>
+      );
+    }
     return (
-      
+      <Button
+        size={figma.Size?.toLowerCase()}
+        theme={figma.Type?.toLowerCase()}
+        variant={figma.Variant?.toLowerCase()}
+      />
     );
   },
 });

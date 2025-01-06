@@ -3,6 +3,10 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import Button from '@mui/material/Button';
 import { Button as EDSButton } from '@fourkites/elemental-atoms';
+import {ButtonWithIcon} from './components/buttonWithIcon/ButtonWithIcon.jsx';
+import { Input } from '@fourkites/elemental-input';
+import SearchForm from './components/search/SearchForm.jsx';
+import { Checkbox } from '@fourkites/elemental-checkbox';
 
 import './App.css'
 
@@ -34,6 +38,15 @@ function App() {
       <EDSButton variant="solid" style={{marginLeft: '20px'}} color="primary">
         I am a EDS button
       </EDSButton>
+      {/* <ButtonWithIcon /> */}
+      <SearchForm />
+      <Checkbox
+          size="large"
+          label={"checkbox"}
+          value={"checked"}
+          disabled={false}
+          onChange={() => {}}
+        />
       </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
