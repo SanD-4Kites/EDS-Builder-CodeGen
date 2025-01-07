@@ -18,11 +18,10 @@ figmaMapping({
       value:figma.State?.toLowerCase() || "unchecked",
       disabled:figma.Disabled?.toLowerCase() || "no",
       hideLabel: figma.Label?.toLowerCase() === "no" || false,
+      label: figma.$textContent || null,
     }
     return (
-      <Checkbox {...baseProps}>
-        {figma.$textContent || null}
-      </Checkbox>
+      <Checkbox {...baseProps} />
     );
   },
 });

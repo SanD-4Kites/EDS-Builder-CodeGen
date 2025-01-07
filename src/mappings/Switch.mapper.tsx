@@ -3,23 +3,24 @@ import { Switch } from "@fourkites/elemental-switch";
 
 // ❖ Switch
 interface FigmaSwitchProps extends BaseFigmaProps {
+  State?: "Off" | "On";
   Size?: "Large" | "Medium";
-  State?: "Off - Left selected" | "On - Right selected";
+  Label?: "No" | "Yes";
   Disabled?: "No" | "Yes";
 }
 
 // Read more at https://www.builder.io/c/docs/mapping-functions
 figmaMapping({
-  componentKey: "1d7e1a7c82093d92615d75a761e731685b4e5d75",
+  componentKey: "7cde0b7f4ae846b9c97478e820eb110b1d1286ad",
   mapper(figma: FigmaSwitchProps) {
     const baseProps = {
       size: figma.Size?.toLowerCase() || "medium",
       disabled: figma.Disabled?.toLowerCase() || "no",
+      defaultLabel: figma.Label?.toLowerCase() === "yes" ? figma?.$textContent : "",
+      checked: figma.State?.toLowerCase() === "on" || false, // check with team once
     }
     return (
-      <Switch {...baseProps}>
-        {figma.$children || null}
-      </Switch>
+      <Switch {...baseProps} />
     );
   },
 });

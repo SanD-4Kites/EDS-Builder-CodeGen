@@ -35,12 +35,12 @@ figmaMapping({
       theme: mapType(figma.Type),
       variant: 'solid',
       size: figma.Size?.toLowerCase(),
+      disabled: figma.State?.toLowerCase() === "disabled" || false,
     };
 
     if(figma.Variant?.toLowerCase() === 'text + icon'){
       return (
         <Button
-          id={'textIcon'}
           {...baseProps}
         >
           {figma.$children[0].$children[0].$textContent}

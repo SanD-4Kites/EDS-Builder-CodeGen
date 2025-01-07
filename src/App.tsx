@@ -7,7 +7,7 @@ import {ButtonWithIcon} from './components/buttonWithIcon/ButtonWithIcon.jsx';
 import { Input } from '@fourkites/elemental-input';
 import {Switch} from "@fourkites/elemental-switch";
 // import {Chip} from "@fourkites/elemental-chip";
-import { RadioIcon } from '@fourkites/elemental-atoms';
+import { RadioButton } from '@fourkites/elemental-radio-button';
 import SearchForm from './components/search/SearchForm.jsx';
 import { Checkbox } from '@fourkites/elemental-checkbox';
 
@@ -59,8 +59,8 @@ function App() {
           onChange={() => {}}
         />
       </div>
-      <RadioIcon />
-      {/* <Chip {...ChipsProps} /> */}
+      <RadioButton />
+      <Chip {...ChipsProps} />
       <Switch defaultLabel={"toggler"}/>
       <Input label={"FullName"} />
       <p className="read-the-docs">

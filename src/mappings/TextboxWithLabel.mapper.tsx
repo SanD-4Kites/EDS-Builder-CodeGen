@@ -12,11 +12,10 @@ figmaMapping({
   mapper(figma: FigmaTextboxWithLabelProps) {
     const baseProps = {
       size: figma.Size?.toLowerCase() || "small",
+      label: figma.$textContent || "",
     }
     return (
-      <Input {...baseProps}>
-        {figma.$textContent || null}
-      </Input>
+      <Input {...baseProps} />
     );
   },
 });
