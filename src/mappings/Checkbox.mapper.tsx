@@ -13,14 +13,16 @@ interface FigmaCheckboxProps extends BaseFigmaProps {
 figmaMapping({
   componentKey: "fbe1c9328393b82a6c35a610345c63b6c0be9b84",
   mapper(figma: FigmaCheckboxProps) {
+    const baseProps = {
+      size:figma.Size?.toLowerCase() || "medium",
+      value:figma.State?.toLowerCase() || "unchecked",
+      disabled:figma.Disabled?.toLowerCase() || "no",
+      hideLabel: figma.Label?.toLowerCase() === "no" || false,
+    }
     return (
-      <Checkbox
-        size={figma.Size?.toLowerCase() || "medium"}
-        checked={figma.State === "Checked"}
-        indeterminate={figma.State === "Intermediate"}
-        disabled={figma.Disabled === "Yes"}
-        hideLabel
-      />
+      <Checkbox {...baseProps}>
+        {figma.$textContent || null}
+      </Checkbox>
     );
   },
 });

@@ -2,13 +2,6 @@ import { figmaMapping, type BaseFigmaProps } from "@builder.io/dev-tools/figma";
 import { Button } from "@fourkites/elemental-atoms";
 
 // ❖ Solid Button
-const GetMatchingComponent = () => {
-  <Button
-    size={figma.Size?.toLowerCase()}
-    theme={figma.Type?.toLowerCase()}
-    variant={figma.Variant?.toLowerCase()}
-  />
-}
 interface FigmaSolidButtonProps extends BaseFigmaProps {
   Type?: "Primary" | "Secondary" | "Tertiary" | "Destructive";
   Variant?:
@@ -29,8 +22,35 @@ interface FigmaSolidButtonProps extends BaseFigmaProps {
 figmaMapping({
   componentKey: "c9542eb16e3bed549aab38310ed6299153957d30",
   mapper(figma: FigmaSolidButtonProps) {
+    const typeMapping = {
+      destructive: "danger"
+    };
+    
+    function mapType(type: string) {
+      const lowerCaseType = type?.toLowerCase();
+      return typeMapping[lowerCaseType] || lowerCaseType;
+    }
+
+    const baseProps = {
+      theme: mapType(figma.Type),
+      variant: 'solid',
+      size: figma.Size?.toLowerCase(),
+    };
+
+    if(figma.Variant?.toLowerCase() === 'text + icon'){
+      return (
+        <Button
+          id={'textIcon'}
+          {...baseProps}
+        >
+          {figma.$children[0].$children[0].$textContent}
+        </Button>
+      );
+    }
     return (
-      
+      <Button {...baseProps}>
+        {figma.$children}
+      </Button>
     );
   },
 });
