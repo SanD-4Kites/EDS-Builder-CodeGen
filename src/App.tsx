@@ -5,13 +5,24 @@ import Button from '@mui/material/Button';
 import { Button as EDSButton } from '@fourkites/elemental-atoms';
 import {ButtonWithIcon} from './components/buttonWithIcon/ButtonWithIcon.jsx';
 import { Input } from '@fourkites/elemental-input';
+import {Switch} from "@fourkites/elemental-switch";
+// import {Chip} from "@fourkites/elemental-chip";
+import { RadioIcon } from '@fourkites/elemental-atoms';
 import SearchForm from './components/search/SearchForm.jsx';
 import { Checkbox } from '@fourkites/elemental-checkbox';
 
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
+
+  const ChipsProps = {
+    theme: "dark",
+    size: "small",
+    shape: "squared",
+    closeable: true,
+    children: "Chip",
+  }
 
   return (
     <>
@@ -48,6 +59,10 @@ function App() {
           onChange={() => {}}
         />
       </div>
+      <RadioIcon />
+      {/* <Chip {...ChipsProps} /> */}
+      <Switch defaultLabel={"toggler"}/>
+      <Input label={"FullName"} />
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>

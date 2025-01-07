@@ -1,8 +1,9 @@
 import {
   ArrowRightIcon,
+  Button,
   ChevronDownIcon,
   ClockIcon,
-  Button,
+  RadioIcon,
 } from "@fourkites/elemental-atoms";
 import { Builder } from "@builder.io/react";
 import { MapIcon, PlusIcon } from "@fourkites/elemental-atoms";
@@ -205,6 +206,36 @@ Builder.registerComponent(ClockIcon, {
     },
   ],
 });
+
 Builder.registerComponent(App, {
   name: "App",
+});
+Builder.registerComponent(RadioIcon, {
+  name: "RadioIcon",
+  inputs: [
+    {
+      name: "className",
+      type: "string",
+    },
+    {
+      name: "fill",
+      type: "string",
+    },
+    {
+      name: "iconClass",
+      type: "string",
+    },
+    {
+      name: "secondaryFill",
+      type: "string",
+    },
+    {
+      name: "size",
+      type: "string",
+    },
+    {
+      name: "title",
+      type: "string",
+    },
+  ],
 });
