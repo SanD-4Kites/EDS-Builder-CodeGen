@@ -14,7 +14,7 @@ figmaMapping({
       size: figma.Size?.toLowerCase() || "small",
       placeholder: figma?.$children[1]?.$children[0]?.$children[0]?.$textContent || "Placeholder",
       label: (figma?.$children[0]?.$children[0]?.$textContent || "Label"),
-      required: figma?.$findOne(n => n.name === 'Component Label')?.$children?.[0]?.$textContent === "Yes" || false
+      required: figma?.$findOne(n => n.name === 'Component Label')?.$children?.[0]?.$textContent === "Yes" || true,
     }
     return (
       <Input {...baseProps} />
