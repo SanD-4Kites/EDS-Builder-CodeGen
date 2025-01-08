@@ -16,7 +16,7 @@ figmaMapping({
     const baseProps = {
       size:figma.Size?.toLowerCase() || "medium",
       value:figma.State?.toLowerCase() || "unchecked",
-      disabled:figma.Disabled?.toLowerCase() || "no",
+      disabled:figma.Disabled?.toLowerCase() === "yes" || false,
       hideLabel: figma.Label?.toLowerCase() === "no" || false,
       label: figma.$textContent || null,
     }

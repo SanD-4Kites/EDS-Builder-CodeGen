@@ -12,7 +12,9 @@ figmaMapping({
   mapper(figma: FigmaTextboxWithLabelProps) {
     const baseProps = {
       size: figma.Size?.toLowerCase() || "small",
-      label: figma.$textContent || "",
+      placeholder: figma?.$children[1]?.$children[0]?.$children[0]?.$textContent || "Placeholder",
+      label: (figma?.$children[0]?.$children[0]?.$textContent || "Label"),
+      required: figma?.$findOne(n => n.name === 'Component Label')?.$children?.[0]?.$textContent === "Yes" || false
     }
     return (
       <Input {...baseProps} />
