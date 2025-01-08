@@ -15,7 +15,7 @@ figmaMapping({
   mapper(figma: FigmaSwitchProps) {
     const baseProps = {
       size: figma.Size?.toLowerCase() || "medium",
-      disabled: figma.Disabled?.toLowerCase() || "no",
+      disabled: figma.Disabled?.toLowerCase() === "yes" || false,
       defaultLabel: figma.Label?.toLowerCase() === "yes" ? figma?.$textContent : "",
       checked: figma.State?.toLowerCase() === "on" || false, // check with team once
     }

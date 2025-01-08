@@ -1,0 +1,123 @@
+.formContainer {
+  border-radius: 10px;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
+  background-color: #fff;
+  display: flex;
+  max-width: 832px;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.header {
+  border-radius: 8px 8px 0 0;
+  background-color: rgba(255, 255, 255, 1);
+  display: flex;
+  width: 100%;
+  padding: 12px 0 0;
+  flex-direction: column;
+  color: var(--Text-Colors-Default, #21252a);
+  font: 700 16px Lato, sans-serif;
+}
+
+.headerTitle {
+  font-feature-settings: "liga" off, "clig" off;
+  margin: 0 0 23px 16px;
+}
+
+.divider {
+  background-color: rgba(222, 226, 230, 1);
+  min-height: 1px;
+  width: 100%;
+}
+
+.formContent {
+  display: flex;
+  width: 280px;
+  max-width: 100%;
+  flex-direction: column;
+  align-items: start;
+  margin: 13px 0 0 17px;
+}
+
+.inputField {
+  width: 256px;
+  max-width: 100%;
+}
+
+.statusSwitch {
+  margin-top: 24px;
+}
+
+.sectionLabel {
+  color: rgba(33, 37, 42, 1);
+  margin-top: 21px;
+  font: 400 16px Lato, sans-serif;
+}
+
+.checkboxGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 21px;
+}
+
+.loadStatusContainer {
+  align-self: stretch;
+  display: flex;
+  margin-top: 31px;
+  width: 100%;
+  align-items: end;
+  gap: 22px;
+}
+
+.loadStatusSection {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.loadStatusLabel {
+  color: rgba(33, 37, 42, 1);
+  font: 400 16px Lato, sans-serif;
+}
+
+.radioGroup {
+  display: flex;
+  gap: 34px;
+  margin-top: 10px;
+}
+
+.formFooter {
+  justify-content: center;
+  border-top: 1px solid var(--Neutral-300, #dee2e6);
+  background-color: #f8f9fa;
+  display: flex;
+  margin-top: 33px;
+  width: 100%;
+  gap: 32px;
+  padding: 14px 18px;
+}
+
+.footerButton {
+  align-self: stretch;
+  min-height: 44px;
+  flex: 1;
+}
+
+@media (max-width: 991px) {
+  .header,
+  .divider,
+  .formContainer,
+  .formFooter {
+    max-width: 100%;
+  }
+
+  .headerTitle {
+    margin-left: 10px;
+  }
+
+  .formContent {
+    margin-left: 10px;
+  }
+}
