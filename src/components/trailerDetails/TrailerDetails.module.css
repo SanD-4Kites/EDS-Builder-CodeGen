@@ -48,7 +48,7 @@
   margin-top: 24px;
 }
 
-.sectionLabel {
+.processStatusLabel {
   color: rgba(33, 37, 42, 1);
   margin-top: 21px;
   font: 400 16px Lato, sans-serif;
@@ -94,7 +94,6 @@
   background-color: #f8f9fa;
   display: flex;
   margin-top: 33px;
-  width: 100%;
   gap: 32px;
   padding: 14px 18px;
 }

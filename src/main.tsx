@@ -6,7 +6,7 @@ import BuilderPage from './builder-page.tsx'
 import {ButtonCounter} from './components/buttonCounter/ButtonCounter.tsx'
 import FigmaBuilderPage from './components/figma-imports.tsx'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import {TrailerDetails} from './components/trailerDetails/TrailerDetails.jsx'
+import {TrailerDetails} from './components/trailerDetails/TrailerDetails.jsx';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
